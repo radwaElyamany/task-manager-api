@@ -4,8 +4,8 @@ const mongodb = require('mongodb');
 
 const { MongoClient, ObjectID } = mongodb;
 
-const connectionURL = process.env.MONGODB_URL;
-// const databaseName = 'task-manager';
+const connectionURL = 'mongodb://127.0.0.1:27017/';
+const databaseName = 'task-manager';
 
 MongoClient.connect(
   connectionURL,
@@ -15,7 +15,7 @@ MongoClient.connect(
       return console.log('unable to connect to database');
     }
 
-    // const db = client.db(databaseName);
+    const db = client.db(databaseName);
 
     /**************************************/
     // deleteOne & deleteMany
